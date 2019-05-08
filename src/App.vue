@@ -1,28 +1,49 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-toolbar app dark color="#5e0909" class="headline">
+      <v-toolbar-title>
+        <span>Budo</span>
+        <span class="font-weight-light">Academy</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn
+        flat
+        to="/"
+      >
+      <v-icon>home</v-icon>
+        <span class="mr-2">Home</span>
+      </v-btn>
+      <v-btn to="/database" flat>
+      <v-icon>face</v-icon>
+        Data Siswa
+      </v-btn>
+      <v-btn flat to='/register'>
+      <v-icon>check_circle_outline</v-icon> 
+        Register
+      </v-btn>
+    </v-toolbar>
+
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+      <Footer />
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Footer from './components/Footer.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    Footer
+    
+  },
+  data () {
+    return {
+      //
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
